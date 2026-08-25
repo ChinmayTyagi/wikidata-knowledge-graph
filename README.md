@@ -26,6 +26,7 @@ Step one toward a Wikidata-based article recommender.
    list in a side panel.
 
 ## Running it
+Just ask Claude lol
 
 ```bash
 pip install -r requirements.txt
