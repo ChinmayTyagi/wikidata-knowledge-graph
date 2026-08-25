@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wikidata Reading Graph</title>
+<link rel="stylesheet" href="style.css" />
+<script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Wikidata Reading Graph</h1>
+    <p class="subtitle">
+      Your Wikipedia reading history, mapped onto Wikidata's knowledge graph.
+      Nodes are articles you read; edges connect articles that share a
+      structural trait in Wikidata (occupation, instance-of, genre, and so on).
+      Hover an edge to see <em>why</em> two articles are connected.
+    </p>
+  </header>
+
+  <div id="toolbar">
+    <input id="search" type="search" placeholder="Search articles..." />
+    <select id="colorBy">
+      <option value="instance_of">Color by type</option>
+      <option value="visits">Color by visit count</option>
+    </select>
+    <label class="checkbox">
+      <input id="hideIsolated" type="checkbox" />
+      Hide unconnected nodes
+    </label>
+    <span id="stats"></span>
+  </div>
+
+  <div id="graph-container">
+    <svg id="graph"></svg>
+    <div id="tooltip" class="hidden"></div>
+    <div id="panel" class="hidden">
+      <button id="panel-close">&times;</button>
+      <div id="panel-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    Built from a personal Wikipedia browsing history export and the
+    <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>
+    knowledge graph. Edge weight = inverse document frequency of shared
+    (property, value) pairs &mdash; rarer shared traits pull nodes closer.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
