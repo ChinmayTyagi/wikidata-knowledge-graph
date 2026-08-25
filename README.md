@@ -1,14 +1,7 @@
 # Wikidata Reading Graph
 
-Turns a personal Wikipedia browsing history into an interactive knowledge-graph
-visualization: each article you read becomes a node, and two nodes connect
-when Wikidata says the underlying entities share a structural trait
-(occupation, instance-of, genre, sport, and so on). Hovering an edge shows
-exactly *why* two articles are linked.
-
-This is step one toward a Wikidata-based article recommender: before ranking
-new articles to suggest, it's worth seeing what the graph of your existing
-interests actually looks like.
+Turns a personal Wikipedia browsing history into an interactive graph.
+Step one toward a Wikidata-based article recommender.
 
 ## How it works
 
